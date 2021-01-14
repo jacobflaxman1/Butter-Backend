@@ -17,7 +17,7 @@ app.use(express.json());
 app.use(cors());
 
 app.use('/api/user', auth);
-app.use('/api', postRouter);
+app.use('/api', validateToken, postRouter);
 
 const uri = process.env.DB_CONNECT;
 mongoose
