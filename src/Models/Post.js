@@ -1,12 +1,11 @@
 const mongoose = require('mongoose');
 
 const postSchema = new mongoose.Schema({
-  title: {
+  description: {
     type: String,
-    max: 1024,
     required: true,
   },
-  body: {
+  uri: {
     type: String,
     required: true,
   },
