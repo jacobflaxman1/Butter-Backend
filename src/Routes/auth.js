@@ -75,7 +75,9 @@ router.post('/login', async (req, res) => {
     .then(function (response) {
       return response.data;
     })
-    .catch(function (error) {});
+    .catch(function (error) {
+      console.error(error);
+    });
   //create token
   const token = jwt.sign(
     {
@@ -84,7 +86,7 @@ router.post('/login', async (req, res) => {
     },
     process.env.TOKEN_SECRET
   );
-  console.log(spotifyToken);
+  console.log('spot toke', spotifyToken);
   res.header('auth-token', token).json({
     error: null,
     data: {
